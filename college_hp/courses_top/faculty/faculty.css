@@ -1,0 +1,658 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: serif;
+}
+
+header {
+    position: fixed;
+    z-index: 999;
+}
+
+/* ハンバーガーメニュー */
+@media screen and (max-width:767px) {
+    :root {
+        --background-navbar: rgba(0, 0, 0, 0.9);
+      }
+      
+      header {
+        background: var(--background-navbar);
+        width: 100%;
+        height: 52px;
+      }      
+
+    .hamburger{
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 70px;
+    }
+
+    .hamburger0 {
+        margin-left: 20px;
+    }
+
+    .hamburger-menu {
+        list-style: none;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        margin-top: 52px;
+        padding: 0 0 10px 0;
+        clear: both;
+        background: var(--background-navbar);
+        transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        transform: scale(1, 0);
+        transform-origin: top;
+      }
+      
+      /* Hamburger menu button */
+      .menu-btn:checked ~ .hamburger-menu {
+        transform: scale(1, 1);
+        transform-origin: top;
+        transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+        z-index: 10;
+      }
+      
+      /* Hamburger menbu text */
+      .hamburger-menu a {
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ddd;
+        opacity: 0;
+        transition: 0.5s;
+      }
+      
+      .hamburger-menu li {
+        padding: 15px 0;
+        margin: 0 54px;
+        opacity: 0;
+        transition: 0.5s;
+      }
+      
+      .menu-btn:checked ~ .hamburger-menu a,
+      .menu-btn:checked ~ .hamburger-menu li {
+        opacity: 1;
+        transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+      }
+      
+      .menu-btn {
+        display: none;
+      }
+      
+      .menu-icon {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        margin-left: auto;
+        margin-right: 30px;
+      }
+      
+      .navicon {
+        background: #ddd;
+        display: block;
+        height: 3px;
+        width: 26px;
+        position: relative;
+        transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+      }
+      
+      .navicon:before,
+      .navicon:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: #ddd;
+        transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+      }
+      
+      .navicon:before {
+        top: 9px;
+      }
+      
+      .navicon:after {
+        bottom: 9px;
+      }
+      
+      /* Hamburger Menu Animation Start */
+      .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+      
+      .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+      
+      .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+        top: 0;
+      }
+      .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        bottom: 0;
+      }
+      
+      .menu-btn:checked ~ .menu-icon .navicon {
+        background: rgba(0, 0, 0, 0);
+        transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+      }
+      /* Hamburger Menu Animation End */
+      
+      /* Navbar Container */
+      .navtext-container {
+        width: 100%;
+        height: 52px;
+        position: absolute;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+      }
+      
+      /* Navbar Text */
+      .navtext {
+        text-transform: uppercase;
+        color: #ddd;
+        font-size: 20px;
+        margin-left: 5px;
+      }
+
+      .ul {
+        overflow: hidden;
+      }
+
+      .li0 li {
+        float: left;
+        margin: 0 10px;
+      }
+
+      .li1 li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+}
+
+@media screen and (min-width:768px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* ヘッダー */
+
+@media screen and (min-width:768px) {
+    #header-inner {
+        background-color: black;
+        width: 100%;
+        height: 80px;
+        opacity: 0.8;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+    }
+    }
+    
+    @media screen and (max-width:767px) {
+        #header-inner {
+        display: none;
+        }
+    }
+    
+    .header-left {
+        margin: 15px 20px 0 20px;
+    }
+    .header-left a{
+        display: flex;
+        text-decoration: none;
+    }
+    
+    .header-title {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 55px;
+        margin-left: 15px;
+    }
+    
+    
+    .header-right {
+        display: flex;
+        gap: 30px;
+        float: right;
+        font-size: 18px;
+        margin: -53px 20px 0 0;
+        text-align: center;
+    }
+    
+    @media screen and (max-width:767px) {
+        .header-right{
+            display: none;
+        }
+    }
+    
+    .header-right a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .nav-menu {
+        display: contents;
+    }
+    
+    .nav-menu2  {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-eng {
+        opacity: 0.3;
+    }
+    
+    .nav-jpn {
+        font-size: 15px;
+    }
+    
+    .nav-menu2:hover .nav-eng {
+        opacity: 1;
+    }
+
+/* コース */
+@media screen and (min-width:992px) {
+    .courses-text{
+        width: 200px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .courses-text{
+        width: 200px;
+    }
+}
+
+.nuws-img {
+    position: relative;
+    background-image: url(../../image/top_back.png);
+    background-size: cover;
+    background-position: top left;
+    background-size: 190%;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 4);
+
+}
+
+@media screen and (min-width:768px) {
+    .news-top {
+        position: absolute;
+        left: 50px;
+        top: 40%;
+    }
+}
+    
+    @media screen and (max-width:767px) {
+    .news-top {
+        position: absolute;
+        left: 20px;
+        top: 40%;
+    }
+}    
+
+.news-top span {
+    font-size: 50px;
+    color: #92def1;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px #0f0f0f;
+}
+
+.news-top p {
+    color: white;
+    font-size: 20px;
+    line-height: 5px;
+}
+
+/* コース中 */
+@media screen and (min-width:992px) {
+    .courses0 {
+        display: flex;
+        }
+    }
+
+@media screen and (min-width:992px) {
+    .courses {
+        width: 70%;    
+        padding: 0 50px;
+        }
+}
+
+@media screen and (max-width:991px) {
+    .courses {
+        max-width: 100%;
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .courses {
+        max-width: 100%;
+        padding: 0 20px 50px 20px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .courses-text h1{
+        font-size: 35px;
+        font-weight: bold;
+        border-bottom: 5px solid #4aa0b5;
+        display: inline;
+        line-height: 150px;
+        opacity: 1;
+        }
+}
+
+@media screen and (max-width:767px) {
+    .courses-text h1{
+        font-size: 35px;
+        font-weight: bold;
+        border-bottom: 5px solid #4aa0b5;
+        display: inline;
+        line-height: 150px;
+        opacity: 1;
+        }
+}
+
+@media screen and (min-width:768px) {
+    .courses1 {
+        display: inline-block;
+        border-bottom: 1px solid #686868;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .courses1 {
+        display: inline-block;
+        border-bottom: 1px solid #686868;
+        margin: 20px 0px;
+        padding-bottom: 20px;
+
+    }
+}
+
+
+.courses-img {
+    width: 100%;
+    height: inherit;
+    border-radius: 8px;
+}
+
+.courses1 p {
+    color: #686868;
+    font-size: 15px;
+    padding: 70px 0;
+}
+
+.date {
+    float: right;
+}
+
+.date span {
+    color: #686868;
+}
+
+@media screen and (min-width:992px) {
+    .link {
+        float: right;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .link {
+        float: right;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .link {
+        float: right;
+    }
+}   
+
+.link a {
+    text-decoration: none;
+}
+
+/* テキストライト */
+.text-right {
+    margin-left: auto;
+    width: 30%;
+    background-color: #2b7b8e33;
+}
+
+@media screen and (max-width:991px) {
+    .text-right {
+        width: 100%;
+    }
+}
+
+/* フォーム全体 */
+.form1 {
+    display: flex;
+    height: 45px;
+}
+/* 入力フォーム */
+.sbox1 {
+    width: 150px;
+    padding: 0 0 0 10px;
+    background: white;
+    border: none;
+    outline: 0;
+    margin-right: 10px;
+}
+/* 検索ボタン */
+.sbtn1 {
+    width: 50px;
+    background: #b39a6a;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px) {
+.text-right0 {
+    padding-left: 50px;
+}
+}
+
+@media screen and (max-width:767px) {
+.text-right0 {
+    padding-left: 20px;
+}
+}    
+
+.text-right h2 {
+    padding-top: 50px;
+}
+
+.text-right2 span {
+    display: inline-block;
+    opacity: 0.7;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4aa0b5;
+}
+
+.text-right3 {
+    width: 70px;
+    display: block;
+    padding: 10px 0 15px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #555555;
+}
+
+.text-right4 {
+    width: 100px;
+    display: block;
+    padding: 10px 0 15px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #555555;
+}
+
+/* フッター */
+@media screen and (min-width:992px) {
+    footer {
+        background-color: black;
+        width: 100%;
+        height: 500px;
+        color: white;
+    }
+
+    .footer-text {
+        max-width: 100%;
+        margin-left: 50px;
+        padding-top: 60px;
+    }    
+}
+
+@media screen and (max-width:991px) {
+    footer {
+        background-color: black;
+        width: 100%;
+        color: white;
+    }
+    .footer-text {
+        max-width: 100%;
+        margin: 0 50px;
+        padding-top: 60px;    
+    }
+}
+
+
+@media screen and (max-width:767px) {
+    .footer-text{
+        margin: 0 20px;
+        padding-top: 60px;
+    }
+}
+
+footer h2 {
+    width: 35%;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.footer-text p {
+    margin-top: 10px;
+}
+
+@media screen and (max-width:991px) {
+.footer-text2{
+    width: 95%;
+}
+}
+
+.footer-text2 span {
+    opacity: 0.6;
+}
+
+@media screen and (min-width:992px) {
+.footer-text2 {
+    width: 35%;
+    border-right: 1px solid white;
+}
+
+.footer-text1 {
+    display: flex;
+}
+}
+
+.footer-link a {
+    text-decoration: none;
+}
+
+.twitter {
+    border-radius: 100%;
+    background-color: white;
+}
+
+.facebook {
+    border-radius: 100%;
+}
+
+.footer-text3 {
+    width: 20%;
+}
+
+.footer-text3 {
+    width: 20%;
+}
+
+@media screen and (max-width:991px) {
+.footer-text3 {
+    width: 100%;
+    margin: 35px 0;
+}
+.footer-text3 a {
+    display: block;
+    font-size: 15px;
+    color: white;
+    opacity: 0.6;
+    text-decoration: none;
+    margin-top: 5px;
+}
+}
+
+@media screen and (min-width:992px) {
+.footer-text3 a {
+    display: block;
+    padding-left: 60px;
+    font-size: 15px;
+    color: white;
+    opacity: 0.6;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.twitter-timeline {
+    width: 40%;
+}
+}
+
+.twitter-timeline::-webkit-scrollbar{
+    display: none;
+}
+
+.under {
+    background-color: #3a3a3a;
+    text-align: center;
+    font-size: small;
+    padding: 10px 0;
+    margin-top: 25px;
+}
+
+@media screen and (max-width:991px) {
+.under {
+    width: 100%;
+    font-size: 11px;
+}
+
+.twitter-timeline {
+    width: 100%;
+}
+}
